@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Consultar Productos{% endblock %}
+{% block content %}
+    <h2>Lista de Productos</h2>
+
+    <div class="tabla-container">
+        {% if productos %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Categoría</th>
+                        <th>Marca</th>
+                        <th>Características</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producto in productos %}
+                        <tr>
+                            <td>{{ producto.codigo }}</td>
+                            <td>{{ producto.nombre }}</td>
+                            <td>${{ producto.precio }}</td>
+                            <td>{{ producto.categoria }}</td>
+                            <td>{{ producto.marca }}</td>
+                            <td>
+                                <ul class="caracteristicas-lista">
+                                {% for pc in producto.productocaracteristica_set.all %}
+                                    <li>{{ pc.caracteristica.nombre }}</li>
+                                {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="no-productos">No hay productos registrados.</p>
+        {% endif %}
+    </div>
+{% endblock %}

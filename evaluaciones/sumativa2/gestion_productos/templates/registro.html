@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Registrar Producto{% endblock %}
+{% block content %}
+    <h2>Registrar Nuevo Producto</h2>
+    <form method="POST" class="formulario-registro">
+        {% csrf_token %}
+        <div class="form-section">
+            <h3>Información del Producto</h3>
+            <div class="form-group">
+                <label for="{{ form.codigo.id_for_label }}">Código:</label>
+                {{ form.codigo }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.nombre.id_for_label }}">Nombre:</label>
+                {{ form.nombre }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.precio.id_for_label }}">Precio:</label>
+                {{ form.precio }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.categoria.id_for_label }}">Categoría:</label>
+                {{ form.categoria }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.marca.id_for_label }}">Marca:</label>
+                {{ form.marca }}
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Características</h3>
+            {{ formset.management_form }}
+            <div id="caracteristicas-container">
+                {% for caracteristica_form in formset %}
+                    <div class="caracteristica-form">
+                        <div class="form-group">
+                            <label>Característica:</label>
+                            {{ caracteristica_form.caracteristica }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <button type="submit" class="btn-registrar">Registrar Producto</button>
+    </form>
+{% endblock %}
