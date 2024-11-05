@@ -12,3 +12,4 @@ Paso 4: Ejecutar el servidor
 python manage.py runserver
 Paso 5: Una vez dado el link hacer click, en este entorno podras rellenar el formulario con los productos
 y también visualizar.
+Usuarios: admin Contraseña: inacap2024
