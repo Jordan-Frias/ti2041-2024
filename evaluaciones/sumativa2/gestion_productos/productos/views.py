@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .forms import ProductoForm, CaracteristicaFormSet
 from .models import Producto, ProductoCaracteristica
 
+@login_required
 def registro_producto(request):
     if request.method == 'POST':
         form = ProductoForm(request.POST)
@@ -25,7 +27,8 @@ def registro_producto(request):
         'formset': formset
     })
 
+@login_required
 def consulta_productos(request):
-    # Obtener todos los productos con sus características
+    # Obtener todos los productos con sus características       
     productos = Producto.objects.prefetch_related('productocaracteristica_set__caracteristica').all()
     return render(request, 'consulta.html', {'productos': productos})
