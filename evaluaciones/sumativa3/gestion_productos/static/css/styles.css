@@ -1,0 +1,172 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #e3f2fd; /* Fondo azul claro */
+}
+
+/* Header */
+header {
+    background-color: #1565c0;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Navegación */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+}
+
+nav a:hover {
+    background-color: #1e88e5;
+    border-radius: 4px;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+}
+
+/* Estilo para listas de características */
+.caracteristicas-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.caracteristicas-lista li {
+    display: inline-block;
+    background-color: #bbdefb;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    margin: 0.1rem;
+    font-size: 0.9rem;
+}
+
+/* Tablas */
+table td {
+    vertical-align: top;
+    padding: 0.75rem;
+}
+
+/* Formulario de Registro de Productos */
+.formulario-registro, .login-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Grupos de formularios */
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #1e88e5;
+}
+
+/* Campos de entrada */
+.form-control, input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #90caf9;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #e3f2fd;
+}
+
+/* Botones */
+.btn-registrar, .login-button {
+    background-color: #1565c0;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-registrar:hover, .login-button:hover {
+    background-color: #1e88e5;
+}
+
+/* Mensajes de error */
+.error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #1565c0;
+    color: #fff;
+    text-align: center;
+    height: 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+.logout-button {
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #c62828;
+}
+.admin-button {
+    background-color: #0288d1;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.admin-button:hover {
+    background-color: #0277bd;
+}

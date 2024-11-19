@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Producto Registrado{% endblock %}
+{% block content %}
+    <h2>Producto Registrado Exitosamente</h2>
+    <div class="resultado-container">
+        <p><strong>Código:</strong> {{ producto.codigo }}</p>
+        <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+        <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+        <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
+        <p><strong>Marca:</strong> {{ producto.marca }}</p>
+        
+        <h3>Características:</h3>
+        <ul>
+        {% for caracteristica in producto.productocaracteristica_set.all %}
+            <li>{{ caracteristica.caracteristica.nombre }}</li>
+        {% endfor %}
+        </ul>
+        
+        <a href="{% url 'registro_producto' %}" class="btn-registrar">Registrar otro producto</a>
+    </div>
+{% endblock %}
